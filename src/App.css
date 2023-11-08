@@ -1,0 +1,33 @@
+.photogrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 1px;
+  margin-left: 50px;
+}
+.photo-item img {
+  width: 350px; 
+  height: auto;
+}
+
+.header {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 16px;
+}
+
+.search-container {
+  display: inline-block;
+  background-color: #333;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.search-bar {
+  border: none;
+  background-color: white;
+  color: black;
+  padding: 5px;
+  width: 200px;
+}
