@@ -1,11 +1,18 @@
 .photogrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
   gap: 1px;
-  margin-left: 50px;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 1200px; 
 }
-.photo-item img {
-  width: 350px; 
+
+.photo-item {
+  margin: 5px;
+}
+
+.photo-image {
+  width: 100%;
   height: auto;
 }
 
@@ -30,4 +37,10 @@
   color: black;
   padding: 5px;
   width: 200px;
+}
+
+@media (max-width: 768px) {
+  .photogrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }

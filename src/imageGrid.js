@@ -3,7 +3,7 @@ import "./App.css";
 
 function Grid() {
   const [photos, setPhotos] = useState([]);
-  const [page, setPage] = useState(1); // Track the current page
+  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const containerRef = useRef(null);
 
@@ -22,7 +22,7 @@ function Grid() {
 
         if (data && data.photos && data.photos.photo) {
           setPhotos((prevPhotos) => [...prevPhotos, ...data.photos.photo]);
-          setPage(page + 1); // Increment the page number
+          setPage(page + 1);
         }
       } catch (error) {
         console.error("Error:", error);
@@ -41,13 +41,10 @@ function Grid() {
       }
     };
 
-    // Attach the scroll event listener
     window.addEventListener("scroll", handleScroll);
 
-    // Load initial data
     loadMoreData();
 
-    // Clean up the scroll event listener
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -55,13 +52,13 @@ function Grid() {
 
   return (
     <div>
-      {/* <h1>Recent Flickr Photos</h1> */}
       <div className="photogrid" ref={containerRef}>
         {photos.map((photo) => (
           <div key={photo.id} className="photo-item">
             <img
               src={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`}
               alt={photo.title}
+              className="photo-image"
             />
           </div>
         ))}
@@ -72,3 +69,4 @@ function Grid() {
 }
 
 export default Grid;
+
