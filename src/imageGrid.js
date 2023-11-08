@@ -55,7 +55,7 @@ function Grid() {
 
   return (
     <div>
-      <h1>Recent Flickr Photos</h1>
+      {/* <h1>Recent Flickr Photos</h1> */}
       <div className="photogrid" ref={containerRef}>
         {photos.map((photo) => (
           <div key={photo.id} className="photo-item">
